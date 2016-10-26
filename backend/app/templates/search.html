@@ -1,0 +1,53 @@
+<!-- extend from base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+
+  <h1>Поиск</h1>
+  <p>Здесь вы можете осуществить поиск</p>
+  <div class="row">
+
+    
+	<!--div class="input-group"> 
+	<input type="text" class="form-control" placeholder="Слова для поиска..." action="{{ url_for('search_results') }}" method="post" name="search">  {{ form.hidden_tag() }} {{ form.query(size=120) }}
+	<span class="input-group-btn"> 
+	<button class="btn btn-default" type="button" type="submit" value="Search">Искать</button> 
+	
+	
+	</span> 
+	</div>
+	</div>
+	<div class="col-md-3">
+	{{ form.author }}
+	
+	{{ form.hidden_tag() }}
+	</div-->
+  
+<div class="col-md-6">
+  <form class="form-control"  action="{{ url_for('search_results') }}" method="post" name="search">
+      
+
+          {{ form.query(size=60, class="span4", placeholder="Search") }}</form>
+      </div>
+	  {% for error in form.query.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+          {% endfor %}<br>
+	  
+	  
+	  <div class="col-md-4">
+	  {{ form.author.label}}
+	  
+               {{ form.author }}
+		</div>
+	<div class="col-md-2">
+      
+      <p><input type="submit" value="Искать"></p>
+  </form-->
+  </div>
+  </div>
+  </div>
+{% endblock %}
+ 
+
