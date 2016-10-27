@@ -1,0 +1,66 @@
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+.submit-button {
+    display: block;
+    background: #5e58c6 url(/images/magnifying_glass_white_26x26.png) no-repeat 50%;
+    background-size: 20px 20px;
+    border: 1px solid #5e58c6;
+    border-radius: 0px;
+    border-radius: 0px 4px 4px 0px;
+    width: 50px;
+    height: 42px;
+    cursor: pointer;
+}
+
+
+
+
+body {
+  padding-top: 50px;
+}
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+
+#panel, #more, #notmore {
+    padding: 5px;
+    text-align: center;
+    background-color: white;
+    border: solid 1px #c3c3c3;
+}
+
+#notmore {
+    background-color: red;
+	text-decoration: underline
+
+}
+
+#panel {
+    padding: 50px;
+    display: none;
+}
+
+#testajax, #testajaxS, #testajaxH {
+	color: red;
+	text-align: left;
+	text-decoration: underline
+	background-color: white;
+
+}
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,24 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+{% block content %}
+<p><b> Вы искали: </b>
+
+  {% if msg %}
+    {{ msg }}
+  {% endif %}
+  </p>
+  
+  <p>  </p>
+<p>
+  {% if author %}
+  <b>в корпусе:</b>
+  {% for entry in author %}
+      {{entry}},
+
+  {% endfor %}
+  {% endif %}
+  
+  </p>
+  
+{% endblock %}
+
