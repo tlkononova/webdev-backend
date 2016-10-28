@@ -9,72 +9,44 @@
   <p>Здесь вы можете осуществить поиск</p>
   
   <div>
-	<p class="lead">
-    <p id="testajax">Помощь</p>
+    <p class="lead">
+      <p id="testajax">Помощь</p>
     </p>
-	<p id="forajax"></p>
-	</div>
-  
-  
-  <div class="row">
-
-    
-	<!--div class="input-group"> 
-	<input type="text" class="form-control" placeholder="Слова для поиска..." action="{{ url_for('search_results') }}" method="post" name="search">  
-	<span class="input-group-btn"> 
-	<button class="btn btn-default" type="button" type="submit" value="Search">Искать</button> 
-	
-	
-	</span> 
-	</div>
-	</div>
-	<div class="col-md-3">
-	
-	</div-->
-  
-<div class="col-md-6">
-  
+    <p id="forajax"></p>
   </div>
-  </div>
-  
   
   <form action="/search_results" method="POST" >
     <input type="text" name="name" class="form-control" placeholder="Слова для поиска...">
     <br>
-	<input type="submit" value="Искать" class="btn btn-lg btn-default">
-	<br>
-	<div class='row'>
-	<div class="col-md-1">
+
+    <div class='row'>
+      <div class="col-md-1">
 	
-	<label><input type="checkbox" name="authorSaadi">Saadi</label>
+	    <label><input type="checkbox" name="authorSaadi">Saadi</label>
     <!--br-->
-	</div>
-	<div class="col-md-1">
-	<p id="testajaxS">Кто это?</span>
-	</div>
-	<div class="col-md-1">
-	<label><input type="checkbox" name="authorHafiz">Hafiz</label>
-	</div>
-	<div class="col-md-1">
-	<span id="testajaxH">Кто это?</span>
-	</div>
+	  </div>
+	  <div class="col-md-1">
+	    <p id="testajaxS">Кто это?</span>
+	  </div>
+	  <div class="col-md-1">
+	    <label><input type="checkbox" name="authorHafiz">Hafiz</label>
+	  </div>
+	  <div class="col-md-1">
+	  <span id="testajaxH">Кто это?</span>
+	  </div>
 	</div>
 	<div class='row'>
-	<div class="col-md-2">
-	<p id="forajaxS"></p>
+	  <div class="col-md-2">
+	    <p id="forajaxS"></p>
+	  </div>
+	  <div class="col-md-2">
+	    <p id="forajaxH"></p>
+	  </div>
 	</div>
-	<div class="col-md-2">
-	<p id="forajaxH"></p>
-	</div>
-	</div>
+	<br>
+	<input type="submit" value="Искать" class="btn btn-lg btn-default">
+    <br>
   </form>
-  
-	</div>
-  
-  
-  </div>
-  
-  
   
 {% endblock %}
  

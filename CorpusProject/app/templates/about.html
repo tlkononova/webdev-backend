@@ -4,30 +4,29 @@
 {% block content %}
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script>
-$(document).ready(function(){
-console.log('Hi');
-$("#more").click(function(){
-console.log('click');
-        $("#panel").slideDown("slow");
-    });
-$("#notmore").click(function(){
-        $("#panel").slideUp("slow");
-    });
-});
+	$(document).ready(function(){
+		console.log('Hi');
+		$("#more").click(function(){
+			console.log('click');
+			$("#panel").slideDown("slow");
+		});
+		$("#notmore").click(function(){
+			$("#panel").slideUp("slow");
+		});
+	});
 </script>
-  <h1>Информация</h1>
+
+<h1>Информация</h1>
   
-	  <div>
-	  <p>Кое-какая информация. </p><p>Еще немного информации.</p>
-	  <div id="more">Хочу еще!</div>
-	  <div id="panel"> Получайте еще кучу информации. Куча информации. Куча информации. Куча информации. 
-	  <p id="notmore">Уберите это!</p>
-	  </div>
+<div class="lead">
+	<p>Кое-какая информация. </p>
+	<p>Еще немного информации.</p>
+	<div id="more">Хочу еще!</div>
+	<div id="panel"> Получайте еще кучу информации. Куча информации. Куча информации. Куча информации. 
+		<p id="notmore">Уберите это!</p>
+	</div>
 	  
-	  </div>
-	  
-			   
+</div>
+
       
 {% endblock %}
- 
-

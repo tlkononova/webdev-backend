@@ -1,21 +1,8 @@
 # -*- coding: utf-8 -*-
 
 from app import app
-# -*- coding: utf-8 -*-
-from flask import render_template, request, flash, redirect, url_for#, session
-
-#from forms import SearchForm
-
+from flask import render_template, request, flash, redirect, url_for
 from app import app
-
-#from models import Entry
-
-#from config import MAX_SEARCH_RESULTS
-
-
-
-#from flask_wtf import Form
-#from wtforms import TextField, SubmitField, SelectField
 
 
 
@@ -37,42 +24,10 @@ def about():
 
 @app.route('/search', methods = ['GET', 'POST'])
 def search():
-    
-    #form = SearchForm()
-
-    #alert = False
-    #if form.validate_on_submit():
-        #flash('Search query="%s", author=%s' %
-        #      (form.query.data, str(form.author.data)))
-        #return redirect('/index')
-        #return redirect(url_for('search_results.html', author=request.form['author']))
-    
     #return render_template('search.html', alert=request.args.get('alert'), title='Search', form = form)
     return render_template('search.html', title='Search')
     
-   
-    
-'''
-@app.route('/searching', methods=['POST'])
-def searching():
-    #if not g.search_form.validate_on_submit():
-    #    return redirect(url_for('index'))
-    author = request.form['author']
-    #author = Entry(request.form['author'])#, request.form['text'])
-    #return redirect(url_for('search_results.html', query=form.query.data))
-    return redirect(url_for('search_results.html', author=author))
-'''
 
-
-'''
-@app.route('/search_results', methods = ['GET', 'POST'])
-def search_results():
-    #author = request.form['author']
-    #results = Entry.query.whoosh_search(query, MAX_SEARCH_RESULTS).all()
-    results = Entry.query.whoosh_search(author, MAX_SEARCH_RESULTS).all()
-    return render_template('search_results.html',author=author,
-                           results=results)
-'''
    
 @app.route('/search_results', methods=['GET', 'POST'])
 def search_results():
@@ -88,14 +43,11 @@ def search_results():
             if request.values.get('authorHafiz', None) == 'on':
                 authors.append('Hafiz')
                 subcorpus = True
-            #authorSaadi
-            #authorHafiz = request.values.get('authorSaadi', None)
-            print (authors)
-            #if request.values.get('name', None) == 'asdf':
-                #print('asdf')
-                #render_template('search_results.html', msg=msg, author=author)
-        #print('not asdf')
-            return render_template('search_results.html', msg=msg, author=authors)
+            
+            #print (authors)
+            
+            result=searchCorpus(msg)
+            return render_template('search_results.html', msg=msg, author=authors, result=result)
         else:
         #    alert = "empty"
         #    return redirect(url_for('search'), alert = alert)
@@ -103,9 +55,21 @@ def search_results():
     else:
         return redirect(url_for('search'))
 		
-		
-#def searchCorpus(query, authors):
-#    dirpath = 'static/corpus'
+import os
+
+def searchCorpus(query):
+    result = []
+    root=os.getcwd()
+    print root
+    dirpath = root+'\\app\\static\\corpus\\'
+    file='corpus.txt'
+    f = open(dirpath+file, 'r')
+    for line in f:       
+        if query in line.decode('utf-8'):
+            result.append(line)
+            print result
+    f.close()
+    return result
 #    for root, dirs, filenames in os.walk(dirpath):
         
 '''

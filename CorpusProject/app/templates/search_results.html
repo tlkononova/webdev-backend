@@ -1,6 +1,9 @@
 <!-- extend base layout -->
 {% extends "base.html" %}
 {% block content %}
+<div class="container"> 
+<br>
+<h1>Результаты поиска:</h1>
 <p><b> Вы искали: </b>
 
   {% if msg %}
@@ -8,17 +11,25 @@
   {% endif %}
   </p>
   
-  <p>  </p>
 <p>
   {% if author %}
   <b>в корпусе:</b>
   {% for entry in author %}
-      {{entry}},
+      {{entry}}
+
+  {% endfor %}
+  {% endif %} 
+</p>
+ 
+<p>  
+  {% if result %}
+  <b>нашлось:</b>
+  {% for entry in result %}
+    <br> {{entry}} 
 
   {% endfor %}
   {% endif %}
-  
-  </p>
-  
+</p>  
+</div>
 {% endblock %}
 

@@ -18,9 +18,10 @@
 
 
 
-
 body {
-  padding-top: 50px;
+    padding-top: 50px;
+    padding-bottom: 20px;
+  
 }
 .starter-template {
   padding: 40px 15px;
@@ -32,12 +33,14 @@ body {
     padding: 5px;
     text-align: center;
     background-color: white;
-    border: solid 1px #c3c3c3;
+    /*border: solid 1px #c3c3c3;*/
 }
 
-#notmore {
-    background-color: red;
-	text-decoration: underline
+#notmore, #more {
+	
+    /*background-color: red;*/
+	color: red;
+	/*text-decoration: underline*/
 
 }
 
@@ -54,11 +57,17 @@ body {
 
 }
 
+#testajax:hover, #testajaxS:hover, #testajaxH:hover, #notmore:hover, #more:hover {
+	text-decoration: underline
+	
+}
 
-
-
-
-
+#logo {
+	
+	/*float:left;height:50px;padding:15px 15px;line-height:20px;*/
+	font-size:26px;
+	color: #FFFFFF;
+}
 
 
 

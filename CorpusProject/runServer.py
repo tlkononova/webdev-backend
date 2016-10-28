@@ -17,5 +17,5 @@ from app import app
 
 
 if __name__ == '__main__':
-    app.run(port=getuid() + ADDITIVE_FOR_UID)#, debug=True)
+    app.run(port=getuid() + ADDITIVE_FOR_UID, debug=True)
     #app.run(debug=True)
