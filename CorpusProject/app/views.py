@@ -54,38 +54,19 @@ def search_results():
             return redirect(url_for('search'))
     else:
         return redirect(url_for('search'))
-		
+
 import os
 
 def searchCorpus(query):
     result = []
     root=os.getcwd()
     print root
-    dirpath = root+'\\app\\static\\corpus\\'
+    dirpath = root+r'/app/static/corpus/'
     file='corpus.txt'
     f = open(dirpath+file, 'r')
     for line in f:       
         if query in line.decode('utf-8'):
             result.append(line)
-            print result
+            #print result
     f.close()
     return result
-#    for root, dirs, filenames in os.walk(dirpath):
-        
-'''
-    for root, dirs, filenames in os.walk(os.getcwd() + '/leo_tolstoy/xml_data/'):
-            for fname in filenames:
-                if doc.filename == fname:
-                    new_path = os.path.join(root, fname)
-                    my_doc, pages = parse_xml_doc(new_path, text_query)
-                    if len(my_doc) > 0:
-                        length = len(my_doc)
-                        paragraph = my_doc[-1]
-                        all_items += length
-                        try:
-                            cite = u'"'+doc.name + u'. "' + doc.source[:-1] + u', стр. ' + pages[-1]
-                        except:
-                            cite = u'"' + doc.name + u'. "' + doc.source[:-1]
-                        results.append((doc.name, paragraph, doc.value, cite))
-    return results, all_items
-'''
