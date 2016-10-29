@@ -59,14 +59,17 @@ import os
 
 def searchCorpus(query):
     result = []
-    root=os.getcwd()
-    print root
-    dirpath = root+r'/app/static/corpus/'
+    #root=os.getcwd()
+    #print root
+    dirpath = r'./app/static/corpus/'
     file='corpus.txt'
-    f = open(dirpath+file, 'r')
-    for line in f:       
-        if query in line.decode('utf-8'):
-            result.append(line)
-            #print result
-    f.close()
+    #f = open(dirpath+file, 'r')
+    #for line in f:       
+    #    if query in line.decode('utf-8'):
+    #        result.append(line)
+    #        #print result
+    #f.close()
+    filename = os.path.join(dirpath,file)
+    with open(filename, 'r') as f:
+        result = [line for line in f if query in line.decode('utf-8')]
     return result
